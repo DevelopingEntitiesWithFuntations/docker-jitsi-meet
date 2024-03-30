@@ -145,6 +145,7 @@ VirtualHost "{{ $XMPP_DOMAIN }}"
   {{ if eq $PROSODY_AUTH_TYPE "jwt" }}
     authentication = "{{ $JWT_AUTH_TYPE }}"
     app_id = "{{ .Env.JWT_APP_ID }}"
+    signature_type = "{{ .Env.JWT_SIGN_TYPE }}"
     app_secret = "{{ .Env.JWT_APP_SECRET }}"
     allow_empty_token = {{ $JWT_ALLOW_EMPTY }}
     {{ if $JWT_ASAP_KEYSERVER }}
